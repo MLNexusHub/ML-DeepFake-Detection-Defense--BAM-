@@ -91,4 +91,4 @@ MIT
 
 ## Contributors
 
-- Prajwal Jahagirdar 
+- Prajwal Jahagirdar

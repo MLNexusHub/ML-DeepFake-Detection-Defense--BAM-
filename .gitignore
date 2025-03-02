@@ -1,0 +1,30 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+myenv/
+venv/
+ENV/
+
+# Local development settings
+.env
+
+# Large model files (consider git LFS for these)
+*.pth
+
+# Firebase credentials
+ml-deepfake-detection-defense-firebase-adminsdk*.json
+
+# Uploaded and processed images
+uploads/
+static/watermarked_images/
+static/detected_real/
+static/detected_fake/
+
+# Log files
+*.log
+
+# Gradio files
+.gradio/ 

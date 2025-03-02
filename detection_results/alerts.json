@@ -1,0 +1,57 @@
+[
+  {
+    "timestamp": "2025-03-01T18:10:00",
+    "image_path": "data/ceo_portrait.jpg",
+    "is_deepfake": true,
+    "deepfake_confidence": 0.78,
+    "watermark_valid": false,
+    "watermark_confidence": 0.35,
+    "status": "alert",
+    "detection_type": "deepfake",
+    "severity": "high"
+  },
+  {
+    "timestamp": "2025-03-01T20:30:00",
+    "image_path": "data/social_media_post.png",
+    "is_deepfake": true,
+    "deepfake_confidence": 0.82,
+    "watermark_valid": true,
+    "watermark_confidence": 0.65,
+    "status": "alert",
+    "detection_type": "deepfake",
+    "severity": "high"
+  },
+  {
+    "timestamp": "2025-03-01T22:45:00",
+    "image_path": "data/executive_headshot.jpg",
+    "is_deepfake": true,
+    "deepfake_confidence": 0.75,
+    "watermark_valid": false,
+    "watermark_confidence": 0.42,
+    "status": "alert",
+    "detection_type": "tampering",
+    "severity": "high"
+  },
+  {
+    "timestamp": "2025-03-01T14:20:00",
+    "image_path": "data/promotional_video_frame.jpg",
+    "is_deepfake": false,
+    "deepfake_confidence": 0.45,
+    "watermark_valid": false,
+    "watermark_confidence": 0.38,
+    "status": "alert",
+    "detection_type": "tampering",
+    "severity": "medium"
+  },
+  {
+    "timestamp": "2025-03-01T12:05:00",
+    "image_path": "data/brand_logo_variant.png",
+    "is_deepfake": false,
+    "deepfake_confidence": 0.30,
+    "watermark_valid": false,
+    "watermark_confidence": 0.25,
+    "status": "alert",
+    "detection_type": "unauthorized_use",
+    "severity": "low"
+  }
+]

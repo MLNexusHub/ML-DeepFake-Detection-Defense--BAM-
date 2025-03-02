@@ -1,0 +1,72 @@
+[
+  {
+    "path": "data/sample_image_1.jpg",
+    "last_checked": "2025-03-01T15:30:00",
+    "status": "clean",
+    "confidence": 0.22,
+    "watermark_status": "valid"
+  },
+  {
+    "path": "data/company_logo.png",
+    "last_checked": "2025-03-01T16:45:00",
+    "status": "clean",
+    "confidence": 0.18,
+    "watermark_status": "valid"
+  },
+  {
+    "path": "data/product_photo.jpg",
+    "last_checked": "2025-03-01T17:20:00",
+    "status": "clean",
+    "confidence": 0.25,
+    "watermark_status": "valid"
+  },
+  {
+    "path": "data/ceo_portrait.jpg",
+    "last_checked": "2025-03-01T18:10:00",
+    "status": "alert",
+    "confidence": 0.78,
+    "watermark_status": "invalid"
+  },
+  {
+    "path": "data/marketing_banner.jpg",
+    "last_checked": "2025-03-01T19:05:00",
+    "status": "clean",
+    "confidence": 0.15,
+    "watermark_status": "valid"
+  },
+  {
+    "path": "data/social_media_post.png",
+    "last_checked": "2025-03-01T20:30:00",
+    "status": "alert",
+    "confidence": 0.82,
+    "watermark_status": "valid"
+  },
+  {
+    "path": "data/team_photo.jpg",
+    "last_checked": "2025-03-01T21:15:00",
+    "status": "clean",
+    "confidence": 0.30,
+    "watermark_status": "valid"
+  },
+  {
+    "path": "data/event_flyer.jpg",
+    "last_checked": "2025-03-01T22:00:00",
+    "status": "clean",
+    "confidence": 0.12,
+    "watermark_status": "valid"
+  },
+  {
+    "path": "data/executive_headshot.jpg",
+    "last_checked": "2025-03-01T22:45:00",
+    "status": "alert",
+    "confidence": 0.75,
+    "watermark_status": "invalid"
+  },
+  {
+    "path": "data/product_launch.jpg",
+    "last_checked": "2025-03-01T23:30:00",
+    "status": "clean",
+    "confidence": 0.28,
+    "watermark_status": "valid"
+  }
+]

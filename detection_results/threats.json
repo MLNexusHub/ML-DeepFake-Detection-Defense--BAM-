@@ -1,0 +1,132 @@
+[
+  {
+    "id": "THREAT-1740868912-1",
+    "type": "deepfake_campaign",
+    "severity": "high",
+    "description": "Deepfake campaign detected using 3 domains to spread manipulated media.",
+    "timestamp": "2025-03-01T23:15:00.000000",
+    "source": "urlscan.io",
+    "indicators": {
+      "domains": ["fake-news365.com", "truthreveal.org", "corporate-leaks.net"],
+      "social_accounts": ["@truth_revealer_2023", "@corporate_insider"]
+    },
+    "status": "active"
+  },
+  {
+    "id": "THREAT-1740868912-2",
+    "type": "brand_impersonation",
+    "severity": "high",
+    "description": "Brand impersonation attack targeting users via 2 phishing URLs.",
+    "timestamp": "2025-03-01T22:30:00.000000",
+    "source": "internal_analysis",
+    "indicators": {
+      "domains": ["secure-login-portal.com", "customer-verify.net"],
+      "urls": ["https://secure-login-portal.com/auth", "https://customer-verify.net/reset"]
+    },
+    "status": "active"
+  },
+  {
+    "id": "THREAT-1740868912-3",
+    "type": "phishing",
+    "severity": "medium",
+    "description": "Phishing campaign detected across 2 domains.",
+    "timestamp": "2025-03-01T21:45:00.000000",
+    "source": "phishtank",
+    "indicators": {
+      "domains": ["secureaccess-verify.com", "account-protection.org"],
+      "emails": ["security@secureaccess-verify.com", "support@account-protection.org"]
+    },
+    "status": "active"
+  },
+  {
+    "id": "THREAT-1740868912-4",
+    "type": "fake_news",
+    "severity": "medium",
+    "description": "Fake news campaign spreading across 3 social media accounts.",
+    "timestamp": "2025-03-01T20:15:00.000000",
+    "source": "osint",
+    "indicators": {
+      "domains": ["breaking-exclusive.com", "insider-news.org"],
+      "social_accounts": ["@breaking_exclusives", "@insider_source", "@news_revealer"]
+    },
+    "status": "active"
+  },
+  {
+    "id": "THREAT-1740868912-5",
+    "type": "credential_theft",
+    "severity": "high",
+    "description": "Credential theft campaign using 2 sender addresses.",
+    "timestamp": "2025-03-01T19:30:00.000000",
+    "source": "partner_feed",
+    "indicators": {
+      "domains": ["secure-verify.org", "account-protect.com"],
+      "urls": ["https://secure-verify.org/login", "https://account-protect.com/reset"]
+    },
+    "status": "active"
+  },
+  {
+    "id": "THREAT-1740868912-6",
+    "type": "social_engineering",
+    "severity": "medium",
+    "description": "Social engineering attack using 5 trigger keywords.",
+    "timestamp": "2025-03-01T18:45:00.000000",
+    "source": "internal_analysis",
+    "indicators": {
+      "keywords": ["urgent", "action required", "security alert", "account verification", "immediate attention"],
+      "phone_numbers": ["+1-555-123-4567", "+44-7700-900123"]
+    },
+    "status": "active"
+  },
+  {
+    "id": "THREAT-1740868912-7",
+    "type": "disinformation",
+    "severity": "medium",
+    "description": "Disinformation campaign detected using 2 websites.",
+    "timestamp": "2025-03-01T17:30:00.000000",
+    "source": "urlscan.io",
+    "indicators": {
+      "domains": ["truth-revealed.com", "corporate-secrets.org"],
+      "social_accounts": ["@truth_revealer", "@whistleblower_anon"]
+    },
+    "status": "active"
+  },
+  {
+    "id": "THREAT-1740868912-8",
+    "type": "deepfake_campaign",
+    "severity": "high",
+    "description": "Advanced deepfake campaign targeting corporate executives.",
+    "timestamp": "2025-03-01T16:15:00.000000",
+    "source": "partner_feed",
+    "indicators": {
+      "domains": ["executive-news.org", "corporate-insiders.com"],
+      "social_accounts": ["@exec_insider", "@corporate_leaks"]
+    },
+    "status": "active"
+  },
+  {
+    "id": "THREAT-1740868912-9",
+    "type": "brand_impersonation",
+    "severity": "medium",
+    "description": "Brand impersonation attack via social media profiles.",
+    "timestamp": "2025-03-01T15:30:00.000000",
+    "source": "user_report",
+    "indicators": {
+      "social_accounts": ["@brand_official_support", "@customer_help_desk"],
+      "domains": ["brand-support-center.com"]
+    },
+    "status": "active"
+  },
+  {
+    "id": "THREAT-1740868912-10",
+    "type": "phishing",
+    "severity": "low",
+    "description": "Low-sophistication phishing campaign detected.",
+    "timestamp": "2025-03-01T14:45:00.000000",
+    "source": "phishtank",
+    "indicators": {
+      "domains": ["get-account-verify.com"],
+      "emails": ["support@get-account-verify.com"]
+    },
+    "status": "mitigated"
+  }
+]

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepfake Defense Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-shield-alt"></i> Deepfake Defense
+            </a>
+            <div class="navbar-text text-white">
+                Brand Abuse Monitoring Solution
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <!-- Image Upload and Analysis Section -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <i class="fas fa-shield-alt"></i> Watermark Protection
+                    </div>
+                    <div class="card-body">
+                        <div class="upload-container">
+                            <form id="protect-form" enctype="multipart/form-data">
+                                <div class="mb-3">
+                                    <label for="protect-file-input" class="form-label">Protect New Image</label>
+                                    <p class="text-muted small">Upload an image to add a protective watermark.</p>
+                                    <input type="file" class="form-control" id="protect-file-input" name="file" accept="image/*" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-shield-alt"></i> Add Watermark Protection
+                                </button>
+                            </form>
+                            <div id="protect-preview-container" class="mt-3 d-none">
+                                <h5>Selected Image:</h5>
+                                <img id="protect-image-preview" class="img-fluid rounded" alt="Preview">
+                            </div>
+                        </div>
+                        <div id="protect-results" class="d-none mt-4">
+                            <h5>Protection Results</h5>
+                            <div id="watermark-results" class="results-container"></div>
+                        </div>
+                        <div id="protect-loading" class="text-center d-none">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <p>Adding watermark protection...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        <i class="fas fa-microscope"></i> Test Image
+                    </div>
+                    <div class="card-body">
+                        <div class="upload-container">
+                            <form id="test-form" enctype="multipart/form-data">
+                                <div class="mb-3">
+                                    <label for="test-file-input" class="form-label">Test Suspicious Image</label>
+                                    <p class="text-muted small">Upload an image to check for watermark and detect potential deepfakes.</p>
+                                    <input type="file" class="form-control" id="test-file-input" name="file" accept="image/*" required>
+                                </div>
+                                <button type="submit" class="btn btn-info">
+                                    <i class="fas fa-search"></i> Analyze Image
+                                </button>
+                            </form>
+                            <div id="test-preview-container" class="mt-3 d-none">
+                                <h5>Selected Image:</h5>
+                                <img id="test-image-preview" class="img-fluid rounded" alt="Preview">
+                            </div>
+                        </div>
+                        <div id="test-results" class="d-none mt-4">
+                            <h5>Analysis Results</h5>
+                            <div id="watermark-test-results" class="results-container mb-3"></div>
+                            <div id="deepfake-results" class="results-container"></div>
+                        </div>
+                        <div id="test-loading" class="text-center d-none">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <p>Analyzing image...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Media Assets -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        <i class="fas fa-images"></i> Media Assets
+                        <button class="btn btn-sm btn-light float-end refresh-btn" data-target="assets">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover" id="assets-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Status</th>
+                                        <th>Confidence</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detection Alerts -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-warning text-dark">
+                        <i class="fas fa-exclamation-triangle"></i> Detection Alerts
+                        <button class="btn btn-sm btn-light float-end refresh-btn" data-target="alerts">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover" id="alerts-table">
+                                <thead>
+                                    <tr>
+                                        <th>Time</th>
+                                        <th>Type</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Incident Logs -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-secondary text-white">
+                        <i class="fas fa-clipboard-list"></i> Incident Logs
+                        <button class="btn btn-sm btn-light float-end refresh-btn" data-target="logs">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover" id="logs-table">
+                                <thead>
+                                    <tr>
+                                        <th>Time</th>
+                                        <th>Event</th>
+                                        <th>Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html> 
